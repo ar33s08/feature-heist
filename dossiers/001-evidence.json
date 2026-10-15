@@ -1,0 +1,123 @@
+{
+ "target": {
+  "name": "Notion Desktop for macOS",
+  "version": "7.0.0",
+  "asar_sha256": "a66b9f676139b05d569d384ec307ccd4de5c253c18befc8286a6890d3fcb9871"
+ },
+ "tool": {
+  "name": "REA (morluto/rea) analyze-javascript-application",
+  "integrity_policy": "record-and-continue"
+ },
+ "scale": {
+  "modules": 3985,
+  "relevant_files": 124,
+  "ast_nodes": 1336060,
+  "graph_nodes": 2730,
+  "semantic_nodes": 45396,
+  "browser_windows": 14,
+  "context_bridge_apis": 19
+ },
+ "inventory": {
+  "native_addons": [
+   "better_sqlite3.node",
+   "mac_utils.node",
+   "win_utils.node",
+   "cf-prefs.node",
+   "progress_bar.node"
+  ],
+  "context_bridge_apis": [
+   "__activityMonitorApi",
+   "__desktopConfig",
+   "__internalSettingsApi",
+   "__mediaApi",
+   "__opener",
+   "__platform"
+  ],
+  "ipc_channels_static": [
+   "notion:quick-search-open-shortcut-settings",
+   "notion:quick-search-set-search-assistant-mode",
+   "notion:set-global-shortcuts-enabled",
+   "notion:quick-search-ready",
+   "notion:quick-search-open-result"
+  ]
+ },
+ "evidence_slices": {
+  "notion:quick-search-open-result": [
+   {
+    "offset": 713753,
+    "bytes": ",S.handleEventFromRenderer.addListener(\"notion:quick-search-open-result\",(e,t)=>{const r=(0,A.normalizeUrlProtocol)(t);r&&f.appController.openURLOptionallySurfacingExistingTab(r)}),S.handleEventFromRe"
+   }
+  ],
+  "quickSearchShortcut": [
+   {
+    "offset": 530694,
+    "bytes": "etState()),r=t.isQuickSearchEnabled,n=t.quickSearchShortcut,a=t.notionAiShortcut;n&&(e&&r&&!o.globalShortcut.isRegistered(n)&&o.globalShortcut.register(n,()=>this.handleGlobalCommandSearchShortcutPres"
+   },
+   {
+    "offset": 533825,
+    "bytes": "earch()}registerGlobalShortcut(e){const{quickSearchShortcut:t,notionAiShortcut:r}=(0,p.preferenceSelector)(u.Store.getState());e!==t||o.globalShortcut.isRegistered(t)||o.globalShortcut.register(t,()=>"
+   },
+   {
+    "offset": 1268195,
+    "bytes": "d:t,isNoseyEnabled:r,notionAiShortcut:n,quickSearchShortcut:a}=e,i=a||\"Shift+CommandOrControl+K\",s=n||(0,o.getNotionAiCommandSearchDefaultShortcut)(\"darwin\"===process.platform);return{...t?{[i]:\"quick"
+   },
+   {
+    "offset": 1408236,
+    "bytes": "ction(e,t){const{isQuickSearchEnabled:r,quickSearchShortcut:o,notionAiShortcut:n,isNoseyEnabled:s}=t,l=a.ALWAYS_SET_ELECTRON_APP_FEATURES.isNotionAiEnabledThroughCommandSearch&&!s;return r?[{label:e.f"
+   },
+   {
+    "offset": 1696206,
+    "bytes": ";this.isEnabled=this.getIsEnabled(e),[r.quickSearchShortcut!==t?.preferences?.quickSearchShortcut,r.isMenuBarIconEnabled!==t?.preferences?.isMenuBarIconEnabled,r.isQuickSearchEnabled!==t?.preferences?"
+   },
+   {
+    "offset": 1696244,
+    "bytes": "r.quickSearchShortcut!==t?.preferences?.quickSearchShortcut,r.isMenuBarIconEnabled!==t?.preferences?.isMenuBarIconEnabled,r.isQuickSearchEnabled!==t?.preferences?.isQuickSearchEnabled,r.isNoseyEnabled"
+   }
+  ],
+  "SqliteServer": [
+   {
+    "offset": 694178,
+    "bytes": "perty(t,\"__esModule\",{value:!0}),t.setupSqliteServer=async function(){g=p.fileLogger.scope(\"SqliteServer\"),h?g.error(\"Tried to start SqliteServer but Sqlite child process is already running\"):(f=await"
+   },
+   {
+    "offset": 694230,
+    "bytes": "=async function(){g=p.fileLogger.scope(\"SqliteServer\"),h?g.error(\"Tried to start SqliteServer but Sqlite child process is already running\"):(f=await(0,d.default)({host:\"127.0.0.1\"}),h=function(){if(!f"
+   },
+   {
+    "offset": 694271,
+    "bytes": "qliteServer\"),h?g.error(\"Tried to start SqliteServer but Sqlite child process is already running\"):(f=await(0,d.default)({host:\"127.0.0.1\"}),h=function(){if(!f)throw new Error(\"No process port assigne"
+   },
+   {
+    "offset": 694500,
+    "bytes": "serData\"),t=l.default.join(__dirname,\"./SqliteServer.js\");return h=c.utilityProcess.fork(t,[e,f.toString()],{serviceName:\"Sqlite Server\",stdio:[\"ignore\",\"pipe\",\"pipe\"]}),h.on(\"exit\",e=>{0!==e&&g.warn("
+   },
+   {
+    "offset": 695218,
+    "bytes": "d process running on ${f}`))},t.shutdownSqliteServer=function(){g?.info(\"Killing child process\"),h?.kill()};const l=s(r(16928)),c=r(4482),d=s(r(51359)),u=i(r(10454)),p=r(8971);let h,f,g},34632:e=>{\"us"
+   },
+   {
+    "offset": 1465008,
+    "bytes": ".assetCache.initialize(),await(0,C.setupSqliteServer)(),(0,_.setupSecurity)(),(0,P.setupSession)(),(0,M.setupRendererListeners)(),(0,T.setupPowerListeners)(),O(),(0,b.setSystemMenu)(),await(0,u.wipeTr"
+   }
+  ],
+  "notion:get-sqlite-disk-usage": [
+   {
+    "offset": 724343,
+    "bytes": ".handleRequestFromRenderer.addListener(\"notion:get-sqlite-disk-usage\",()=>(0,x.getSqliteDiskUsage)()),S.handleRequestFromRenderer.addListener(\"notion:get-media-access-status\",(e,t)=>s.systemPreference"
+   }
+  ],
+  "notion:set-global-shortcuts-enabled": [
+   {
+    "offset": 704935,
+    "bytes": ",S.handleEventFromRenderer.addListener(\"notion:set-global-shortcuts-enabled\",(e,t)=>{f.appController.setGlobalShortcutsEnabled(t)}),S.handleEventFromRenderer.addListener(\"notion:open-system-settings\","
+   }
+  ],
+  "check-screen-capture-access": [
+   {
+    "offset": 725899,
+    "bytes": "RequestFromRenderer.addListener(\"notion:check-screen-capture-access\",()=>f.appController.audioController.checkScreenCaptureAccess()),S.handleRequestFromRenderer.addListener(\"notion:request-screen-capt"
+   }
+  ]
+ },
+ "main_finding": "Notion Desktop is a thin Electron shell over the same web app shipped in a browser. Its entire native value is a small feature set: a global-hotkey Quick Search overlay window (8 dedicated notion:quick-search-* IPC channels + a quickSearchController state slice), a local SQLite cache served by a dedicated SqliteServer child process (better-sqlite3) with a built-in SQL browser devtool, tab/window management, native clipboard formats, and menu-bar presence. Everything else is a webcontents view of notion.so."
+}
